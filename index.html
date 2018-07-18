@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/map.css" />
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=BSKHkddrAesvEXNXQFHaZEW0Ws5NoiDP"></script>
+		<script type="text/javascript" src="js/map_tool.js" ></script>
+		<script type="text/javascript" src="js/getData.js" ></script>
+		<script type="text/javascript" src="js/index.js" ></script>
+	</head>
+	<body>
+		<pre>
+		现象：缩放时自定义图片距离标注点位置相差过大
+		
+		原因：地图大小发生变化时，自定义标注的图片大小不变，导致偏离位置发生，
+		尤其当标注的图片设置的图片大小越大时发生偏移越大
+		
+		解决方案：尽可能减小标注图片的大小： new BMap.Size(28, 28)
+		var pointIcon = new BMap.Icon(node.iconPath, new BMap.Size(28, 28));
+		</pre>
+		<hr />
+		<div id="map_demo">
+			
+		</div>
+		
+	</body>
+</html>
